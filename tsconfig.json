@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "content-collections": ["./.content-collections/generated"]
     }
   },
   "include": [
@@ -31,4 +32,6 @@
     "**/*.mts"
   ],
   "exclude": ["node_modules"]
+
 }
+
