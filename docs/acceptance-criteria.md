@@ -10,23 +10,23 @@ This document outlines the development milestones for the personal blog platform
 ### 1. Project Initialization & Infrastructure
 **Description:** Set up the base Next.js project with TypeScript and Tailwind CSS.
 **Acceptance Criteria:**
-* [ ] Initialize Next.js using the App Router.
-* [ ] Configure Tailwind CSS with the `@tailwindcss/typography` plugin.
-* [ ] Deploy a "Coming Soon" placeholder to Vercel to verify the CI/CD pipeline.
+* [x] Initialize Next.js using the App Router.
+* [x] Configure Tailwind CSS with the `@tailwindcss/typography` plugin.
+* [x] Deploy a "Coming Soon" placeholder to Vercel to verify the CI/CD pipeline.
 
 ### 2. Content Pipeline with Content Collections
 **Description:** Implement the transformation layer to turn MDX files into type-safe data.
 **Acceptance Criteria:**
-* [ ] Define a `Post` schema in `content-collections.ts` (including title, date, and summary).
-* [ ] Create a `/content` directory with at least one sample `.mdx` file.
-* [ ] Successfully generate TypeScript types from the MDX frontmatter.
+* [x] Define a `Post` schema in `content-collections.ts` (including title, date, and summary).
+* [x] Create a `/content` directory with at least one sample `.mdx` file.
+* [x] Successfully generate TypeScript types from the MDX frontmatter.
 
 ### 3. Dynamic Blog Routing
 **Description:** Create individual post pages using dynamic segments.
 **Acceptance Criteria:**
-* [ ] Implement `app/blog/[slug]/page.tsx` to fetch content based on the URL slug.
-* [ ] Use `generateStaticParams` for build-time static page generation.
-* [ ] Wrap MDX output in a Tailwind `prose` class for immediate readability.
+* [x] Implement `app/blog/[slug]/page.tsx` to fetch content based on the URL slug.
+* [x] Use `generateStaticParams` for build-time static page generation.
+* [x] Wrap MDX output in a Tailwind `prose` class for immediate readability.
 
 ---
 
