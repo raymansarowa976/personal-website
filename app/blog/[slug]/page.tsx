@@ -23,3 +23,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     </article>
   );
 }
+export async function generateStaticParams() {
+  return allPosts.map((post) => ({
+    slug: post._meta.path,
+  }));
+}
