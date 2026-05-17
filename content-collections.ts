@@ -9,6 +9,7 @@ const posts = defineCollection({
   title: z.string(),
   summary: z.string(),
   date: z.string(),
+  content: z.string(),
 }),
 transform: async (document, context) => {
     const html = await compileMDX(context, document);
@@ -29,6 +30,7 @@ const projects = defineCollection({
     image: z.string(),
     tech: z.array(z.string()),
     github: z.string().url().optional(),
+    content: z.string(),
   }),
 });
 
