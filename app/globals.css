@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05050f;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,15 +12,234 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: #05050f;
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── Global starfield (fixed behind all pages) ─────────── */
+
+.starfield-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.starfield-bg::before,
+.starfield-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* Layer 1 — 100 tiny stars, faster drift */
+.starfield-bg::before {
+  box-shadow:
+    50px 18px 0 0 rgba(255,255,255,0.9),
+    321px 45px 0 0 rgba(255,255,255,0.7),
+    678px 12px 0 0 rgba(255,255,255,0.8),
+    1012px 89px 0 0 rgba(255,255,255,0.6),
+    1234px 34px 0 0 rgba(255,255,255,0.9),
+    89px 134px 0 0 rgba(255,255,255,0.7),
+    456px 167px 0 0 rgba(255,255,255,0.8),
+    789px 123px 0 0 rgba(255,255,255,0.6),
+    1100px 178px 0 0 rgba(255,255,255,0.9),
+    1389px 56px 0 0 rgba(255,255,255,0.7),
+    167px 245px 0 0 rgba(255,255,255,0.8),
+    512px 289px 0 0 rgba(255,255,255,0.6),
+    845px 312px 0 0 rgba(255,255,255,0.9),
+    1145px 267px 0 0 rgba(255,255,255,0.7),
+    34px 378px 0 0 rgba(255,255,255,0.8),
+    367px 356px 0 0 rgba(255,255,255,0.6),
+    700px 389px 0 0 rgba(255,255,255,0.9),
+    1023px 234px 0 0 rgba(255,255,255,0.7),
+    1312px 345px 0 0 rgba(255,255,255,0.8),
+    223px 412px 0 0 rgba(255,255,255,0.6),
+    578px 423px 0 0 rgba(255,255,255,0.9),
+    912px 467px 0 0 rgba(255,255,255,0.7),
+    1256px 489px 0 0 rgba(255,255,255,0.8),
+    67px 512px 0 0 rgba(255,255,255,0.6),
+    400px 534px 0 0 rgba(255,255,255,0.9),
+    734px 556px 0 0 rgba(255,255,255,0.7),
+    1078px 445px 0 0 rgba(255,255,255,0.8),
+    1390px 523px 0 0 rgba(255,255,255,0.6),
+    145px 589px 0 0 rgba(255,255,255,0.9),
+    489px 601px 0 0 rgba(255,255,255,0.7),
+    823px 634px 0 0 rgba(255,255,255,0.8),
+    1167px 667px 0 0 rgba(255,255,255,0.6),
+    312px 712px 0 0 rgba(255,255,255,0.9),
+    656px 745px 0 0 rgba(255,255,255,0.7),
+    1000px 778px 0 0 rgba(255,255,255,0.8),
+    1323px 623px 0 0 rgba(255,255,255,0.6),
+    78px 756px 0 0 rgba(255,255,255,0.9),
+    434px 789px 0 0 rgba(255,255,255,0.7),
+    767px 656px 0 0 rgba(255,255,255,0.8),
+    1112px 812px 0 0 rgba(255,255,255,0.6),
+    234px 834px 0 0 rgba(255,255,255,0.9),
+    567px 867px 0 0 rgba(255,255,255,0.7),
+    901px 845px 0 0 rgba(255,255,255,0.8),
+    1245px 923px 0 0 rgba(255,255,255,0.6),
+    45px 956px 0 0 rgba(255,255,255,0.9),
+    389px 978px 0 0 rgba(255,255,255,0.7),
+    723px 912px 0 0 rgba(255,255,255,0.8),
+    1056px 989px 0 0 rgba(255,255,255,0.6),
+    1378px 934px 0 0 rgba(255,255,255,0.9),
+    178px 1012px 0 0 rgba(255,255,255,0.7),
+    512px 1034px 0 0 rgba(255,255,255,0.8),
+    845px 1067px 0 0 rgba(255,255,255,0.6),
+    1189px 1045px 0 0 rgba(255,255,255,0.9),
+    334px 1112px 0 0 rgba(255,255,255,0.7),
+    667px 1145px 0 0 rgba(255,255,255,0.8),
+    1001px 1123px 0 0 rgba(255,255,255,0.6),
+    1312px 1178px 0 0 rgba(255,255,255,0.9),
+    89px 1167px 0 0 rgba(255,255,255,0.7),
+    423px 1189px 0 0 rgba(255,255,255,0.8),
+    756px 1056px 0 0 rgba(255,255,255,0.6),
+    1100px 1234px 0 0 rgba(255,255,255,0.9),
+    1423px 1256px 0 0 rgba(255,255,255,0.7),
+    245px 1312px 0 0 rgba(255,255,255,0.8),
+    578px 1345px 0 0 rgba(255,255,255,0.6),
+    912px 1278px 0 0 rgba(255,255,255,0.9),
+    1256px 1367px 0 0 rgba(255,255,255,0.7),
+    67px 1389px 0 0 rgba(255,255,255,0.8),
+    400px 1323px 0 0 rgba(255,255,255,0.6),
+    734px 1412px 0 0 rgba(255,255,255,0.9),
+    1067px 1356px 0 0 rgba(255,255,255,0.7),
+    1389px 1434px 0 0 rgba(255,255,255,0.8),
+    156px 1467px 0 0 rgba(255,255,255,0.6),
+    489px 1512px 0 0 rgba(255,255,255,0.9),
+    823px 1489px 0 0 rgba(255,255,255,0.7),
+    1167px 1545px 0 0 rgba(255,255,255,0.8),
+    312px 1578px 0 0 rgba(255,255,255,0.6),
+    645px 1534px 0 0 rgba(255,255,255,0.9),
+    978px 1601px 0 0 rgba(255,255,255,0.7),
+    1312px 1556px 0 0 rgba(255,255,255,0.8),
+    45px 1589px 0 0 rgba(255,255,255,0.6),
+    378px 1623px 0 0 rgba(255,255,255,0.9),
+    712px 1656px 0 0 rgba(255,255,255,0.7),
+    1045px 1689px 0 0 rgba(255,255,255,0.8),
+    1378px 1712px 0 0 rgba(255,255,255,0.6),
+    189px 1745px 0 0 rgba(255,255,255,0.9),
+    523px 1778px 0 0 rgba(255,255,255,0.7),
+    856px 1734px 0 0 rgba(255,255,255,0.8),
+    1189px 1767px 0 0 rgba(255,255,255,0.6),
+    67px 1823px 0 0 rgba(255,255,255,0.9),
+    400px 1812px 0 0 rgba(255,255,255,0.7),
+    734px 1845px 0 0 rgba(255,255,255,0.8),
+    1067px 1878px 0 0 rgba(255,255,255,0.6),
+    1389px 1912px 0 0 rgba(255,255,255,0.9),
+    234px 1934px 0 0 rgba(255,255,255,0.7),
+    567px 1956px 0 0 rgba(255,255,255,0.8),
+    901px 1978px 0 0 rgba(255,255,255,0.6),
+    1245px 1945px 0 0 rgba(255,255,255,0.9),
+    78px 1967px 0 0 rgba(255,255,255,0.7),
+    412px 1989px 0 0 rgba(255,255,255,0.8),
+    745px 1923px 0 0 rgba(255,255,255,0.6);
+  animation: starfield-drift 70s linear infinite;
+}
+
+/* Layer 2 — 50 slightly glowing stars, slower drift */
+.starfield-bg::after {
+  box-shadow:
+    234px 89px 1px 0 rgba(255,255,255,0.6),
+    789px 234px 1px 0 rgba(255,255,255,0.8),
+    1312px 156px 1px 0 rgba(255,255,255,0.6),
+    67px 378px 1px 0 rgba(255,255,255,0.7),
+    623px 467px 1px 0 rgba(255,255,255,0.6),
+    1145px 412px 1px 0 rgba(255,255,255,0.8),
+    345px 612px 1px 0 rgba(255,255,255,0.6),
+    900px 556px 1px 0 rgba(255,255,255,0.7),
+    1367px 678px 1px 0 rgba(255,255,255,0.6),
+    123px 723px 1px 0 rgba(255,255,255,0.8),
+    678px 812px 1px 0 rgba(255,255,255,0.6),
+    1200px 767px 1px 0 rgba(255,255,255,0.7),
+    456px 934px 1px 0 rgba(255,255,255,0.6),
+    1012px 878px 1px 0 rgba(255,255,255,0.8),
+    1389px 956px 1px 0 rgba(255,255,255,0.6),
+    234px 1067px 1px 0 rgba(255,255,255,0.7),
+    789px 1023px 1px 0 rgba(255,255,255,0.6),
+    1234px 1145px 1px 0 rgba(255,255,255,0.8),
+    512px 1189px 1px 0 rgba(255,255,255,0.6),
+    1067px 1234px 1px 0 rgba(255,255,255,0.7),
+    67px 1312px 1px 0 rgba(255,255,255,0.6),
+    623px 1367px 1px 0 rgba(255,255,255,0.8),
+    1178px 1289px 1px 0 rgba(255,255,255,0.6),
+    345px 1456px 1px 0 rgba(255,255,255,0.7),
+    900px 1423px 1px 0 rgba(255,255,255,0.6),
+    1389px 1512px 1px 0 rgba(255,255,255,0.8),
+    156px 1578px 1px 0 rgba(255,255,255,0.6),
+    712px 1534px 1px 0 rgba(255,255,255,0.7),
+    1267px 1601px 1px 0 rgba(255,255,255,0.6),
+    434px 1667px 1px 0 rgba(255,255,255,0.8),
+    989px 1712px 1px 0 rgba(255,255,255,0.6),
+    1345px 1756px 1px 0 rgba(255,255,255,0.7),
+    223px 1823px 1px 0 rgba(255,255,255,0.6),
+    778px 1867px 1px 0 rgba(255,255,255,0.8),
+    1334px 1845px 1px 0 rgba(255,255,255,0.6),
+    67px 1934px 1px 0 rgba(255,255,255,0.7),
+    556px 1956px 1px 0 rgba(255,255,255,0.6),
+    1112px 1978px 1px 0 rgba(255,255,255,0.8),
+    312px 1912px 1px 0 rgba(255,255,255,0.6),
+    867px 1889px 1px 0 rgba(255,255,255,0.7),
+    445px 278px 1px 0 rgba(255,255,255,0.6),
+    1001px 345px 1px 0 rgba(255,255,255,0.8),
+    178px 534px 1px 0 rgba(255,255,255,0.6),
+    734px 623px 1px 0 rgba(255,255,255,0.7),
+    1289px 845px 1px 0 rgba(255,255,255,0.6),
+    389px 1089px 1px 0 rgba(255,255,255,0.8),
+    945px 1156px 1px 0 rgba(255,255,255,0.6),
+    1412px 1378px 1px 0 rgba(255,255,255,0.7),
+    267px 1645px 1px 0 rgba(255,255,255,0.6),
+    823px 1789px 1px 0 rgba(255,255,255,0.8);
+  animation: starfield-drift 130s linear infinite;
+}
+
+@keyframes starfield-drift {
+  to { transform: translateY(-2000px); }
+}
+
+/* ── Comet trail ──────────────────────────────────────── */
+
+.comet-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.comet-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 4px 1px rgba(255, 255, 255, 0.7),
+    0 0 10px 3px rgba(147, 197, 253, 0.4);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: comet-fade 0.8s ease-out forwards;
+}
+
+@keyframes comet-fade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 8px)) scale(0.1);
+  }
 }
