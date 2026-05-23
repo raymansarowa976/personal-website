@@ -209,3 +209,38 @@ body {
 @keyframes starfield-drift {
   to { transform: translateY(-2000px); }
 }
+
+/* ── Comet trail ──────────────────────────────────────── */
+
+.comet-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.comet-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 4px 1px rgba(255, 255, 255, 0.7),
+    0 0 10px 3px rgba(147, 197, 253, 0.4);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: comet-fade 0.8s ease-out forwards;
+}
+
+@keyframes comet-fade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 8px)) scale(0.1);
+  }
+}
