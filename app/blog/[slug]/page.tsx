@@ -1,13 +1,9 @@
 import { allPosts } from "content-collections";
 import { notFound } from "next/navigation";
+import { PostContent } from "@/components/PostContent";
 
-// 1. Make the function async
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
-  
-  // 2. Await the params object
   const { slug } = await params;
-
-  // 3. Find the post using the unwrapped slug
   const post = allPosts.find((p) => p._meta.path === slug);
 
   if (!post) {
@@ -19,10 +15,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <h1>{post.title}</h1>
       <p className="text-gray-500">{post.date}</p>
       <hr />
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <PostContent html={post.html} />
     </article>
   );
 }
+
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post._meta.path,
