@@ -43,9 +43,9 @@ This document outlines the development milestones for the personal blog platform
 ### 5. Global Navigation & Layout
 **Description:** Build a cohesive UI connecting the home page and the blog.
 **Acceptance Criteria:**
-* [ ] Create a `Navbar` with links to Home, Blog, and Projects.
-* [ ] Implement a `Footer` featuring GitHub and LinkedIn profiles.
-* [ ] Ensure the layout is fully responsive across mobile and desktop.
+* [x] Create a `Navbar` with links to Home, Blog, and Projects.
+* [x] Implement a `Footer` featuring GitHub and LinkedIn profiles.
+* [x] Ensure the layout is fully responsive across mobile and desktop.
 
 ---
 
