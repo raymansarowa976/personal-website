@@ -5,8 +5,8 @@ import { mdxOptions } from "./lib/mdx";
 
 const posts = defineCollection({
   name: "posts",
-  directory: "content",
-  include: "**/*.mdx",
+  directory: "content/posts",
+  include: "*.mdx",
   schema: z.object({
     title: z.string(),
     summary: z.string(),
@@ -14,10 +14,10 @@ const posts = defineCollection({
     content: z.string(),
   }),
   transform: async (document, context) => {
-    const html = await compileMDX(context, document, mdxOptions);
+    const mdx = await compileMDX(context, document, mdxOptions);
     return {
       ...document,
-      html,
+      mdx,
     };
   },
 });

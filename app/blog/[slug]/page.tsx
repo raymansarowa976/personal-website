@@ -1,6 +1,6 @@
 import { allPosts } from "content-collections";
 import { notFound } from "next/navigation";
-import { PostContent } from "@/components/PostContent";
+import { MDXRenderer } from "@/components/MDXRenderer";
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -15,7 +15,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <h1>{post.title}</h1>
       <p className="text-gray-500">{post.date}</p>
       <hr />
-      <PostContent html={post.html} />
+      <MDXRenderer code={post.mdx} />
     </article>
   );
 }
