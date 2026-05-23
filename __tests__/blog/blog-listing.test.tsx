@@ -58,22 +58,22 @@ describe('Blog listing page', () => {
       expect(slugLinks[1].getAttribute('href')).toBe('/blog/second-post')
     })
 
-    it('shows the title of each post', () => {
+    it('shows the title of each post as the link text', () => {
       render(<BlogPage />)
-      expect(screen.getByText('Hello World')).toBeTruthy()
-      expect(screen.getByText('Second Post')).toBeTruthy()
-    })
-
-    it('shows the summary of each post', () => {
-      render(<BlogPage />)
-      expect(screen.getByText('My first post summary.')).toBeTruthy()
-      expect(screen.getByText('Another post summary.')).toBeTruthy()
+      expect(screen.getByRole('link', { name: 'Hello World' })).toBeTruthy()
+      expect(screen.getByRole('link', { name: 'Second Post' })).toBeTruthy()
     })
 
     it('shows the date of each post', () => {
       render(<BlogPage />)
       expect(screen.getByText('2024-01-15')).toBeTruthy()
       expect(screen.getByText('2024-02-20')).toBeTruthy()
+    })
+
+    it('renders the date in a time element', () => {
+      render(<BlogPage />)
+      const times = document.querySelectorAll('time')
+      expect(times).toHaveLength(2)
     })
   })
 })

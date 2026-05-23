@@ -11,7 +11,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <article className="max-w-3xl mx-auto py-10 px-4 prose lg:prose-xl">
+    <article className="max-w-3xl mx-auto py-10 px-4 prose prose-invert lg:prose-xl">
       <h1>{post.title}</h1>
       <p className="text-gray-500">{post.date}</p>
       <hr />

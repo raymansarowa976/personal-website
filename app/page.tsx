@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="home-starfield min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-16">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-16">
       <div className="text-center space-y-8 max-w-2xl relative z-10">
         <h1 className="text-5xl sm:text-6xl font-bold text-white tracking-tight">
           About Me

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05050f;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,29 +12,28 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: #05050f;
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ── Home page starfield ──────────────────────────────── */
+/* ── Global starfield (fixed behind all pages) ─────────── */
 
-.home-starfield {
-  position: relative;
-  background: #05050f;
+.starfield-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   overflow: hidden;
+  pointer-events: none;
 }
 
-.home-starfield::before,
-.home-starfield::after {
+.starfield-bg::before,
+.starfield-bg::after {
   content: '';
   position: absolute;
   top: 0;
@@ -45,7 +44,7 @@ body {
 }
 
 /* Layer 1 — 100 tiny stars, faster drift */
-.home-starfield::before {
+.starfield-bg::before {
   box-shadow:
     50px 18px 0 0 rgba(255,255,255,0.9),
     321px 45px 0 0 rgba(255,255,255,0.7),
@@ -151,7 +150,7 @@ body {
 }
 
 /* Layer 2 — 50 slightly glowing stars, slower drift */
-.home-starfield::after {
+.starfield-bg::after {
   box-shadow:
     234px 89px 1px 0 rgba(255,255,255,0.6),
     789px 234px 1px 0 rgba(255,255,255,0.8),
