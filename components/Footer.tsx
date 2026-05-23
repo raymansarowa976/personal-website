@@ -1,8 +1,8 @@
 export function Footer() {
   return (
-    <footer className="border-t mt-auto">
+    <footer className="border-t border-white/10 bg-[#05050f]">
       <div className="max-w-3xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-slate-500">
           © {new Date().getFullYear()} Rayman Sarowa
         </p>
         <div className="flex items-center gap-6">
@@ -10,7 +10,7 @@ export function Footer() {
             href="https://github.com/raymansarowa976"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            className="text-sm text-slate-500 hover:text-white transition-colors"
           >
             GitHub
           </a>
@@ -18,13 +18,13 @@ export function Footer() {
             href="https://www.linkedin.com/in/rayman-sarowa/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            className="text-sm text-slate-500 hover:text-white transition-colors"
           >
             LinkedIn
           </a>
           <a
             href="mailto:raymansarowa1@gmail.com"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            className="text-sm text-slate-500 hover:text-white transition-colors"
           >
             Email
           </a>
