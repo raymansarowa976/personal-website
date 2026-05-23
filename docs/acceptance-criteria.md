@@ -55,16 +55,16 @@ This document outlines the development milestones for the personal blog platform
 ### 6. Image Optimization in MDX
 **Description:** Ensure images are optimized for fast loading.
 **Acceptance Criteria:**
-* [ ] Map standard Markdown `img` tags to the `next/image` component.
-* [ ] Support local images stored within the `/content` directory.
-* [ ] Enable automatic WebP conversion and resizing.
+* [x] Map standard Markdown `img` tags to the `next/image` component.
+* [x] Support local images stored within the `/content` directory.
+* [x] Enable automatic WebP conversion and resizing.
 
 ### 7. SEO & Meta Tags
 **Description:** Optimize the site for discovery and social sharing.
 **Acceptance Criteria:**
-* [ ] Implement dynamic metadata via the Next.js `generateMetadata` API.
-* [ ] Automatically generate a `sitemap.xml` using a Route Handler.
-* [ ] Add Open Graph (OG) tags for social media link previews.
+* [x] Implement dynamic metadata via the Next.js `generateMetadata` API.
+* [x] Automatically generate a `sitemap.xml` using a Route Handler.
+* [x] Add Open Graph (OG) tags for social media link previews.
 
 ---
 
@@ -72,7 +72,7 @@ This document outlines the development milestones for the personal blog platform
 *Goal: Highlight specific software engineering and data science expertise.*
 
 ### 8. Project Portfolio Integration
-**Description:** Display existing projects like PulseLogic and the TA Management System.
+**Description:** Display existing projects like Subscription Intelligence and the TA Management System.
 **Acceptance Criteria:**
 * [ ] Create a project showcase section featuring tech stack badges (Next.js, Python, Java).
 * [ ] Link directly to GitHub repositories or live project demos.
