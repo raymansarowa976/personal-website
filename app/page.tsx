@@ -8,7 +8,7 @@ export default function Home() {
           About Me
         </h1>
         <p className="text-xl text-slate-300 leading-relaxed">
-          I grew up in the Okanagan Vallay in British Columbia. Here I went to UBCO and recieved a Bsc in Computer Science and learned a lot of interesting things. I created this website so I could post stuff I wanted and also show some of the projects I&apos;ve worked on.
+          Hello, My name is Rayman Sarowa. I grew up in the city of Kelowna which is located in British Columbia. Here, I went to UBCO and recieved a Bsc in Computer Science and learned a lot of interesting things. I created this website so I could post stuff I wanted and also show some of the projects I&apos;ve worked on.
         </p>
         <div className="flex items-center justify-center gap-4 pt-2">
           <Link
