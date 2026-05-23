@@ -36,9 +36,9 @@ This document outlines the development milestones for the personal blog platform
 ### 4. Syntax Highlighting & Code Blocks
 **Description:** Enhance the reading experience for technical code snippets.
 **Acceptance Criteria:**
-* [ ] Integrate `rehype-pretty-code` into the content pipeline.
-* [ ] Apply a VS Code-compatible theme (e.g., Dracula or GitHub Dark).
-* [ ] Add a "Copy to Clipboard" button for all code blocks.
+* [x] Integrate `rehype-pretty-code` into the content pipeline.
+* [x] Apply a VS Code-compatible theme (e.g., Dracula or GitHub Dark).
+* [x] Add a "Copy to Clipboard" button for all code blocks.
 
 ### 5. Global Navigation & Layout
 **Description:** Build a cohesive UI connecting the home page and the blog.
