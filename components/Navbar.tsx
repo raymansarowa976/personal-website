@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function Navbar() {
   return (
-    <nav className="border-b border-white/10 bg-[#05050f]">
+    <nav className="bg-[#05050f]">
       <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="font-semibold text-lg text-white">
           Rayman Sarowa
