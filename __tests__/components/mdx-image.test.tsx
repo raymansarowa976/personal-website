@@ -40,7 +40,7 @@ describe('MdxImage', () => {
 
     it('defaults alt to an empty string when not provided', () => {
       render(<MdxImage src="/content/images/test.png" />)
-      expect(screen.getByRole('img', { hidden: true })).toBeTruthy()
+      expect(document.querySelector('img')).toBeTruthy()
     })
   })
 
