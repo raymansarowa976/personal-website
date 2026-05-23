@@ -5,10 +5,10 @@ export default function Home() {
     <div className="home-starfield min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-16">
       <div className="text-center space-y-8 max-w-2xl relative z-10">
         <h1 className="text-5xl sm:text-6xl font-bold text-white tracking-tight">
-          Rayman Sarowa
+          About Me
         </h1>
         <p className="text-xl text-slate-300 leading-relaxed">
-          Building things on the web.
+          I grew up in the Okanagan Vallay in British Columbia. Here I went to UBCO and recieved a Bsc in Computer Science and learned a lot of interesting things. I created this website so I could post stuff I wanted and also show some of the projects I&apos;ve worked on.
         </p>
         <div className="flex items-center justify-center gap-4 pt-2">
           <Link
