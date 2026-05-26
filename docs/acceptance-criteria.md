@@ -74,6 +74,6 @@ This document outlines the development milestones for the personal blog platform
 ### 8. Project Portfolio Integration
 **Description:** Display existing projects like Subscription Intelligence and the TA Management System.
 **Acceptance Criteria:**
-* [ ] Create a project showcase section featuring tech stack badges (Next.js, Python, Java).
-* [ ] Link directly to GitHub repositories or live project demos.
-* [ ] Ensure project documentation matches the professional standards of the blog.
+* [x] Create a project showcase section featuring tech stack badges (Next.js, Python, Java).
+* [x] Link directly to GitHub repositories or live project demos.
+* [x] Ensure project documentation matches the professional standards of the blog.
