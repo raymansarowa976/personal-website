@@ -21,14 +21,34 @@ describe('Projects page', () => {
     expect(screen.getByRole('heading', { level: 1 })).toBeTruthy()
   })
 
-  it('communicates that content is coming soon', () => {
+  it('renders the Subscription Intelligence project', () => {
     render(<ProjectsPage />)
-    expect(screen.getByText(/coming soon/i)).toBeTruthy()
+    expect(screen.getByText(/subscription intelligence/i)).toBeTruthy()
   })
 
-  it('includes a link back to the home page', () => {
+  it('renders the MASHER project', () => {
     render(<ProjectsPage />)
-    const homeLink = screen.getByRole('link', { name: /home/i })
-    expect(homeLink.getAttribute('href')).toBe('/')
+    expect(screen.getByText(/masher/i)).toBeTruthy()
+  })
+
+  it('renders the Space Traffic Control project', () => {
+    render(<ProjectsPage />)
+    expect(screen.getByText(/space traffic control/i)).toBeTruthy()
+  })
+
+  it('renders the block-lock project', () => {
+    render(<ProjectsPage />)
+    expect(screen.getByText(/block.lock/i)).toBeTruthy()
+  })
+
+  it('marks block-lock as in progress', () => {
+    render(<ProjectsPage />)
+    expect(screen.getByText(/in progress/i)).toBeTruthy()
+  })
+
+  it('renders a GitHub link for each project', () => {
+    render(<ProjectsPage />)
+    const githubLinks = screen.getAllByRole('link', { name: /github/i })
+    expect(githubLinks.length).toBe(4)
   })
 })
