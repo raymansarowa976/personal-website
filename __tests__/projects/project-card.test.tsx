@@ -55,6 +55,25 @@ describe('ProjectCard', () => {
     })
   })
 
+  describe('accent bar', () => {
+    it('renders an accent bar element when accent is provided', () => {
+      render(<ProjectCard {...baseProject} accent="#16a34a" />)
+      const bar = document.querySelector('[data-accent]')
+      expect(bar).toBeTruthy()
+    })
+
+    it('applies the accent colour to the bar', () => {
+      render(<ProjectCard {...baseProject} accent="#16a34a" />)
+      const bar = document.querySelector<HTMLElement>('[data-accent]')!
+      expect(bar.style.backgroundColor).toBe('rgb(22, 163, 74)')
+    })
+
+    it('does not render an accent bar when accent is not provided', () => {
+      render(<ProjectCard {...baseProject} />)
+      expect(document.querySelector('[data-accent]')).toBeNull()
+    })
+  })
+
   describe('in progress badge', () => {
     it('does not render an in progress badge by default', () => {
       render(<ProjectCard {...baseProject} />)

@@ -5,6 +5,7 @@ export interface Project {
   githubUrl: string
   demoUrl?: string
   inProgress?: boolean
+  accent?: string
 }
 
 export const projects: Project[] = [
@@ -14,6 +15,7 @@ export const projects: Project[] = [
       'Multi-tenant financial tracking platform integrating Gmail OAuth2 to automate receipt ingestion. Features an async background pipeline (Huey + Redis) for mailbox scanning and AI-assisted parsing to extract merchant, price, and renewal cadence from unstructured email.',
     stack: ['Django', 'PostgreSQL', 'Redis', 'HTMX', 'Tailwind CSS', 'Python'],
     githubUrl: 'https://github.com/raymansarowa976/Subscription-Intelligence',
+    accent: '#16a34a',
   },
   {
     title: 'MASHER — TA Allocation System',
@@ -21,6 +23,7 @@ export const projects: Project[] = [
       'Full-stack TA allocation system with role-based access control for students, instructors, admins, and TAs. Architected a scalable PostgreSQL schema for complex many-to-many relationships and deployed via an Nginx reverse proxy with GitHub Actions CI/CD in a Dockerized environment.',
     stack: ['Next.js', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Docker', 'Nginx'],
     githubUrl: 'https://github.com/raymansarowa976/TA-Allocation-MASHER',
+    accent: '#2563eb',
   },
   {
     title: 'Space Traffic Control — NASA Analytics',
@@ -28,6 +31,7 @@ export const projects: Project[] = [
       'Automated ETL pipeline extracting and sanitising Near-Earth Object data from NASA\'s NeoWs REST API. Applied K-Means clustering to classify asteroids into hazard profiles based on kinetic energy, orbital velocity, and miss-distance.',
     stack: ['Python', 'Pandas', 'Scikit-Learn', 'SciPy', 'SQLite'],
     githubUrl: 'https://github.com/raymansarowa976/space-traffic-control',
+    accent: '#d97706',
   },
   {
     title: 'block-lock',
@@ -36,5 +40,6 @@ export const projects: Project[] = [
     stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Redis', 'Auth.js', 'Zod', 'Turborepo', 'Chrome Extension MV3'],
     githubUrl: 'https://github.com/raymansarowa976/block-lock',
     inProgress: true,
+    accent: '#7c3aed',
   },
 ]
