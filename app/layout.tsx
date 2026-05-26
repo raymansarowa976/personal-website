@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://raymansarowa.com'),
+  metadataBase: new URL('https://rsarowa.com'),
   title: {
     default: 'Rayman Sarowa',
     template: '%s | Rayman Sarowa',

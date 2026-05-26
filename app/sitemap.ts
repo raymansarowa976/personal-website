@@ -1,7 +1,7 @@
 import { allPosts } from 'content-collections'
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://raymansarowa.com'
+const BASE_URL = 'https://rsarowa.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postEntries = allPosts.map((post) => ({
