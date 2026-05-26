@@ -1,0 +1,22 @@
+my-blog/
+├── app/                        # Next.js App Router (UI & Routing)
+│   ├── layout.tsx              # Global layout (Navbar, Footer, Fonts)
+│   ├── page.tsx                # Homepage (Lists all blog posts)
+│   ├── globals.css             # Tailwind CSS imports
+│   └── blog/
+│       └── [slug]/
+│           └── page.tsx        # Individual blog post page
+├── content/                    # Your "Database"[cite: 1]
+│   ├── post-one.mdx            # Blog post content[cite: 1]
+│   ├── post-two.mdx            
+│   └── images/                 # Local images for MDX files
+├── components/                 # Reusable React components[cite: 1]
+│   ├── MDXComponents.tsx       # Custom React components for MDX
+│   ├── Navbar.tsx
+│   └── Footer.tsx
+├── public/                     # Static assets (Favicon, logos)[cite: 1]
+├── content-collections.ts      # Schema & Content configuration[cite: 1]
+├── next.config.mjs             # Next.js configuration
+├── tailwind.config.ts          # Tailwind & Typography settings[cite: 1]
+├── tsconfig.json               # TypeScript configuration
+└── package.json                # Dependencies and scripts
