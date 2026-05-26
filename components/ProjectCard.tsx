@@ -1,4 +1,5 @@
 import type { Project } from '@/lib/projects'
+import { TechBadge } from '@/components/TechBadge'
 
 export function ProjectCard({ title, description, stack, githubUrl, demoUrl, inProgress, accent }: Project) {
   return (
@@ -25,12 +26,7 @@ export function ProjectCard({ title, description, stack, githubUrl, demoUrl, inP
 
         <div className="flex flex-wrap gap-2">
           {stack.map((tech) => (
-            <span
-              key={tech}
-              className="px-2.5 py-1 rounded-full text-xs font-medium bg-white/10 text-slate-300"
-            >
-              {tech}
-            </span>
+            <TechBadge key={tech} name={tech} />
           ))}
         </div>
 
