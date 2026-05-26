@@ -55,6 +55,18 @@ describe('ProjectCard', () => {
     })
   })
 
+  describe('in progress badge', () => {
+    it('does not render an in progress badge by default', () => {
+      render(<ProjectCard {...baseProject} />)
+      expect(screen.queryByText(/in progress/i)).toBeNull()
+    })
+
+    it('renders an in progress badge when inProgress is true', () => {
+      render(<ProjectCard {...baseProject} inProgress />)
+      expect(screen.getByText(/in progress/i)).toBeTruthy()
+    })
+  })
+
   describe('demo link', () => {
     it('does not render a demo link when demoUrl is not provided', () => {
       render(<ProjectCard {...baseProject} />)

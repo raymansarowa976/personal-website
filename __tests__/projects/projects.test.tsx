@@ -36,9 +36,19 @@ describe('Projects page', () => {
     expect(screen.getByText(/space traffic control/i)).toBeTruthy()
   })
 
+  it('renders the block-lock project', () => {
+    render(<ProjectsPage />)
+    expect(screen.getByText(/block.lock/i)).toBeTruthy()
+  })
+
+  it('marks block-lock as in progress', () => {
+    render(<ProjectsPage />)
+    expect(screen.getByText(/in progress/i)).toBeTruthy()
+  })
+
   it('renders a GitHub link for each project', () => {
     render(<ProjectsPage />)
     const githubLinks = screen.getAllByRole('link', { name: /github/i })
-    expect(githubLinks.length).toBe(3)
+    expect(githubLinks.length).toBe(4)
   })
 })
