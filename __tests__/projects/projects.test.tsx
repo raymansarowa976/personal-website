@@ -46,9 +46,20 @@ describe('Projects page', () => {
     expect(screen.getByText(/in progress/i)).toBeTruthy()
   })
 
-  it('renders a GitHub link for each project', () => {
+  it('renders a GitHub link for projects with a githubUrl', () => {
     render(<ProjectsPage />)
     const githubLinks = screen.getAllByRole('link', { name: /github/i })
-    expect(githubLinks.length).toBe(4)
+    expect(githubLinks.length).toBe(3)
+  })
+
+  it('renders a website link for block-lock', () => {
+    render(<ProjectsPage />)
+    const websiteLink = screen.getByRole('link', { name: /website/i })
+    expect(websiteLink.getAttribute('href')).toBe('https://blocklock.app')
+  })
+
+  it('marks subscription intelligence as deploying soon', () => {
+    render(<ProjectsPage />)
+    expect(screen.getByText(/deploying soon/i)).toBeTruthy()
   })
 })
