@@ -49,17 +49,19 @@ describe('Projects page', () => {
   it('renders a GitHub link for projects with a githubUrl', () => {
     render(<ProjectsPage />)
     const githubLinks = screen.getAllByRole('link', { name: /github/i })
-    expect(githubLinks.length).toBe(3)
+    expect(githubLinks.length).toBe(2)
   })
 
-  it('renders a website link for block-lock', () => {
+  it('renders website links for projects with a websiteUrl', () => {
     render(<ProjectsPage />)
-    const websiteLink = screen.getByRole('link', { name: /website/i })
-    expect(websiteLink.getAttribute('href')).toBe('https://blocklock.app')
+    const websiteLinks = screen.getAllByRole('link', { name: /website/i })
+    expect(websiteLinks.length).toBe(2)
   })
 
-  it('marks subscription intelligence as deploying soon', () => {
+  it('links subscription intelligence to subintel.ca', () => {
     render(<ProjectsPage />)
-    expect(screen.getByText(/deploying soon/i)).toBeTruthy()
+    const websiteLinks = screen.getAllByRole('link', { name: /website/i })
+    const subintelLink = websiteLinks.find(link => link.getAttribute('href') === 'https://subintel.ca')
+    expect(subintelLink).toBeTruthy()
   })
 })

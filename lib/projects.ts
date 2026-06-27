@@ -25,8 +25,7 @@ export const projects: Project[] = [
     description:
       'Multi-tenant financial tracking platform integrating Gmail OAuth2 to automate receipt ingestion. Features an async background pipeline (Huey + Redis) for mailbox scanning and AI-assisted parsing to extract merchant, price, and renewal cadence from unstructured email.',
     stack: ['Django', 'PostgreSQL', 'Redis', 'HTMX', 'Tailwind CSS', 'Python'],
-    githubUrl: 'https://github.com/raymansarowa976/Subscription-Intelligence',
-    deployingSoon: true,
+    websiteUrl: 'https://subintel.ca',
     accent: '#16a34a',
   },
   {
