@@ -12,9 +12,9 @@ describe('sitemap', () => {
     expect(urls.some((u) => u.endsWith('/')|| u.match(/^https?:\/\/[^/]+$/))).toBe(true)
   })
 
-  it('includes the projects page', () => {
+  it('includes the portfolio page', () => {
     const urls = sitemap().map((e) => e.url)
-    expect(urls.some((u) => u.endsWith('/projects'))).toBe(true)
+    expect(urls.some((u) => u.endsWith('/portfolio'))).toBe(true)
   })
 
   it('every entry has a url', () => {

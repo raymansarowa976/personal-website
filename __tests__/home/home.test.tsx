@@ -23,11 +23,11 @@ describe('Home page', () => {
   })
 
   describe('navigation links', () => {
-    it('links to projects at /projects', () => {
+    it('links to the portfolio at /portfolio', () => {
       render(<Home />)
       const links = screen.getAllByRole('link')
-      const projectsLink = links.find((l) => l.getAttribute('href') === '/projects')
-      expect(projectsLink).toBeTruthy()
+      const portfolioLink = links.find((l) => l.getAttribute('href') === '/portfolio')
+      expect(portfolioLink).toBeTruthy()
     })
   })
 

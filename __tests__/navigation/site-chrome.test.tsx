@@ -39,7 +39,7 @@ describe('SiteChrome', () => {
 
   describe('on other pages', () => {
     beforeEach(() => {
-      vi.mocked(usePathname).mockReturnValue('/projects')
+      vi.mocked(usePathname).mockReturnValue('/portfolio')
     })
 
     it('renders the navbar', () => {
