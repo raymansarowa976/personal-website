@@ -12,10 +12,10 @@ export default function Home() {
         </p>
         <div className="flex items-center justify-center gap-4 pt-2">
           <Link
-            href="/projects"
+            href="/portfolio"
             className="px-6 py-2.5 rounded-full bg-white text-slate-900 font-semibold hover:bg-slate-100 transition-colors text-sm"
           >
-            Projects
+            Portfolio
           </Link>
         </div>
         <div className="flex items-center justify-center gap-6 pt-4">
