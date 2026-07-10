@@ -23,13 +23,6 @@ describe('Home page', () => {
   })
 
   describe('navigation links', () => {
-    it('links to the blog at /blog', () => {
-      render(<Home />)
-      const links = screen.getAllByRole('link')
-      const blogLink = links.find((l) => l.getAttribute('href') === '/blog')
-      expect(blogLink).toBeTruthy()
-    })
-
     it('links to projects at /projects', () => {
       render(<Home />)
       const links = screen.getAllByRole('link')
