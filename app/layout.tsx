@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     default: 'Rayman Sarowa',
     template: '%s | Rayman Sarowa',
   },
-  description: 'Personal website and blog of Rayman Sarowa — software developer from Kelowna, BC.',
+  description: 'Personal website of Rayman Sarowa — software developer from Kelowna, BC.',
   openGraph: {
     title: 'Rayman Sarowa',
-    description: 'Personal website and blog of Rayman Sarowa — software developer from Kelowna, BC.',
+    description: 'Personal website of Rayman Sarowa — software developer from Kelowna, BC.',
     type: 'website',
   },
 };
