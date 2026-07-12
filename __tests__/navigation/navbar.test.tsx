@@ -16,7 +16,7 @@ vi.mock('next/link', () => ({
 }))
 
 /**
- * Tests for AC1: Navbar with links to Home and Portfolio
+ * Tests for AC1: Navbar with links to About Me and Portfolio
  * Tests for AC3: Responsive layout markers
  *
  * Imports from `components/Navbar.tsx` (not yet created) — will fail in red state.
@@ -33,7 +33,7 @@ describe('Navbar', () => {
   describe('required links', () => {
     it('contains a link to the home page (/)', () => {
       render(<Navbar />)
-      const link = screen.getByRole('link', { name: /home/i })
+      const link = screen.getByRole('link', { name: /about me/i })
       expect(link.getAttribute('href')).toBe('/')
     })
 
