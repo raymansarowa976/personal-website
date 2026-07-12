@@ -10,7 +10,7 @@ export function Navbar() {
         <ul className="flex items-center gap-6">
           <li>
             <Link href="/" className="text-sm text-slate-400 hover:text-white transition-colors">
-              Home
+              About Me
             </Link>
           </li>
           <li>
