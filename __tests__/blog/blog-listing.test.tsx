@@ -50,12 +50,12 @@ describe('Blog listing page', () => {
       expect(screen.getAllByRole('article')).toHaveLength(2)
     })
 
-    it('links each post title to /blog/[slug]', () => {
+    it('links each post title to /blog/[slug], newest first', () => {
       render(<BlogPage />)
       const links = screen.getAllByRole('link')
       const slugLinks = links.filter((l) => l.getAttribute('href')?.startsWith('/blog/'))
-      expect(slugLinks[0].getAttribute('href')).toBe('/blog/hello-world')
-      expect(slugLinks[1].getAttribute('href')).toBe('/blog/second-post')
+      expect(slugLinks[0].getAttribute('href')).toBe('/blog/second-post')
+      expect(slugLinks[1].getAttribute('href')).toBe('/blog/hello-world')
     })
 
     it('shows the title of each post as the link text', () => {
