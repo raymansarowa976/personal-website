@@ -29,6 +29,15 @@ export const projects: Project[] = [
     accent: '#16a34a',
   },
   {
+    title: 'DebateAI',
+    description:
+      'Asynchronous, multi-turn B2C platform where users challenge an AI opponent in formal debate structures. An independent agentic "Judge" pipeline scores performance across structured criteria, flags logical fallacies, and determines a winner via dynamic evaluation matrices, all streamed live via Django Channels and processed off the request cycle with Celery.',
+    stack: ['Next.js', 'Django', 'Django REST Framework', 'Django Channels', 'Celery', 'Redis', 'PostgreSQL', 'Pydantic', 'Docker', 'Nginx'],
+    githubUrl: 'https://github.com/raymansarowa976/debate-ai',
+    inProgress: true,
+    accent: '#dc2626',
+  },
+  {
     title: 'MASHER — TA Allocation System',
     description:
       'Full-stack TA allocation system with role-based access control for students, instructors, admins, and TAs. Architected a scalable PostgreSQL schema for complex many-to-many relationships and deployed via an Nginx reverse proxy with GitHub Actions CI/CD in a Dockerized environment.',
