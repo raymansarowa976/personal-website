@@ -43,13 +43,18 @@ describe('Projects page', () => {
 
   it('marks block-lock as in progress', () => {
     render(<ProjectsPage />)
-    expect(screen.getByText(/in progress/i)).toBeTruthy()
+    expect(screen.getAllByText(/in progress/i).length).toBeGreaterThan(0)
   })
 
   it('renders a GitHub link for projects with a githubUrl', () => {
     render(<ProjectsPage />)
     const githubLinks = screen.getAllByRole('link', { name: /github/i })
-    expect(githubLinks.length).toBe(2)
+    expect(githubLinks.length).toBe(3)
+  })
+
+  it('renders the DebateAI project', () => {
+    render(<ProjectsPage />)
+    expect(screen.getByText(/debateai/i)).toBeTruthy()
   })
 
   it('renders website links for projects with a websiteUrl', () => {
