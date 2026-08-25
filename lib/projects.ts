@@ -34,7 +34,6 @@ export const projects: Project[] = [
       'Asynchronous, multi-turn B2C platform where users challenge an AI opponent in formal debate structures. An independent agentic "Judge" pipeline scores performance across structured criteria, flags logical fallacies, and determines a winner via dynamic evaluation matrices, all streamed live via Django Channels and processed off the request cycle with Celery.',
     stack: ['Next.js', 'Django', 'Django REST Framework', 'Django Channels', 'Celery', 'Redis', 'PostgreSQL', 'Pydantic', 'Docker', 'Nginx'],
     githubUrl: 'https://github.com/raymansarowa976/debate-ai',
-    inProgress: true,
     accent: '#dc2626',
   },
   {
