@@ -49,7 +49,7 @@ describe('Projects page', () => {
   it('renders a GitHub link for projects with a githubUrl', () => {
     render(<ProjectsPage />)
     const githubLinks = screen.getAllByRole('link', { name: /github/i })
-    expect(githubLinks.length).toBe(3)
+    expect(githubLinks.length).toBe(2)
   })
 
   it('renders the DebateAI project', () => {
@@ -60,7 +60,7 @@ describe('Projects page', () => {
   it('renders website links for projects with a websiteUrl', () => {
     render(<ProjectsPage />)
     const websiteLinks = screen.getAllByRole('link', { name: /website/i })
-    expect(websiteLinks.length).toBe(2)
+    expect(websiteLinks.length).toBe(3)
   })
 
   it('links subscription intelligence to subintel.ca', () => {
