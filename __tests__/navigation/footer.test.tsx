@@ -59,6 +59,14 @@ describe('Footer', () => {
     })
   })
 
+  describe('Email link', () => {
+    it('renders a mailto link', () => {
+      render(<Footer />)
+      const link = screen.getByRole('link', { name: /email/i })
+      expect(link.getAttribute('href')).toContain('mailto:')
+    })
+  })
+
   describe('responsiveness', () => {
     it('footer container uses a flex layout to support responsive stacking', () => {
       render(<Footer />)
