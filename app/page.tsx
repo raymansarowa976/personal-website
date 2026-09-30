@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SocialLinks } from '@/components/SocialLinks'
 
 export default function Home() {
   return (
@@ -24,30 +25,7 @@ export default function Home() {
             Projects
           </Link>
         </div>
-        <div className="flex items-center justify-center gap-6 pt-4">
-          <a
-            href="https://github.com/raymansarowa976"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-white transition-colors text-sm"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/rayman-sarowa/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-white transition-colors text-sm"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="mailto:raymansarowa1@gmail.com"
-            className="text-slate-400 hover:text-white transition-colors text-sm"
-          >
-            Email
-          </a>
-        </div>
+        <SocialLinks className="justify-center pt-4" size="lg" />
       </div>
     </div>
   )
