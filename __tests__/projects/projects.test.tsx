@@ -18,7 +18,12 @@ import ProjectsPage from '../../app/projects/page'
 describe('Projects page', () => {
   it('renders a top-level heading', () => {
     render(<ProjectsPage />)
-    expect(screen.getByRole('heading', { level: 1 })).toBeTruthy()
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Projects')
+  })
+
+  it('does not render its own main landmark (the root layout provides it)', () => {
+    render(<ProjectsPage />)
+    expect(screen.queryByRole('main')).toBeNull()
   })
 
   it('renders the Subscription Intelligence project', () => {

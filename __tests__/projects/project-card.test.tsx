@@ -120,6 +120,25 @@ describe('ProjectCard', () => {
     })
   })
 
+  describe('links row', () => {
+    it('does not render any links when no URLs are provided', () => {
+      render(<ProjectCard {...baseProject} />)
+      expect(screen.queryAllByRole('link')).toHaveLength(0)
+    })
+
+    it('renders every provided link', () => {
+      render(
+        <ProjectCard
+          {...baseProject}
+          githubUrl="https://github.com/raymansarowa976/my-project"
+          websiteUrl="https://blocklock.app"
+          demoUrl="https://example.com"
+        />
+      )
+      expect(screen.getAllByRole('link')).toHaveLength(3)
+    })
+  })
+
   describe('demo link', () => {
     it('does not render a demo link when demoUrl is not provided', () => {
       render(<ProjectCard {...baseProject} />)
