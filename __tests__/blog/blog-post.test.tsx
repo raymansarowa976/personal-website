@@ -23,6 +23,18 @@ vi.mock('next/navigation', () => ({
   notFound: vi.fn(() => { throw new Error('NOT_FOUND') }),
 }))
 
+vi.mock('next/link', () => ({
+  default: ({
+    href,
+    children,
+    ...props
+  }: {
+    href: string
+    children: React.ReactNode
+    [key: string]: unknown
+  }) => <a href={String(href)} {...props}>{children}</a>,
+}))
+
 vi.mock('../../components/MDXRenderer', () => ({
   MDXRenderer: ({ code }: { code: string }) => (
     <div data-testid="mdx-renderer" data-code={code} />
@@ -37,10 +49,19 @@ describe('Blog post page', () => {
       expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Hello World')
     })
 
-    it('renders the post date', async () => {
+    it('renders the formatted post date in a time element', async () => {
       const element = await PostPage({ params: Promise.resolve({ slug: 'hello-world' }) })
       render(element)
-      expect(screen.getByText('2024-01-15')).toBeTruthy()
+      const time = screen.getByText('January 15, 2024')
+      expect(time.tagName).toBe('TIME')
+      expect(time.getAttribute('datetime')).toBe('2024-01-15')
+    })
+
+    it('links back to the blog listing', async () => {
+      const element = await PostPage({ params: Promise.resolve({ slug: 'hello-world' }) })
+      render(element)
+      const link = screen.getByRole('link', { name: /all posts/i })
+      expect(link.getAttribute('href')).toBe('/blog')
     })
 
     it('passes the post mdx bundle to MDXRenderer', async () => {
