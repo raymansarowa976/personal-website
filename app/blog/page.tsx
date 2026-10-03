@@ -13,7 +13,7 @@ export default function BlogPage() {
       <PageHeader
         eyebrow="Writing"
         title="Blog"
-        description="Thoughts on software, things I'm learning, and whatever else is going on in my life."
+        description="Thoughts on stuff, things I'm learning, and whatever else is going on in my mind."
       />
       <div className="space-y-4">
         {sortedPosts.map((post) => (
