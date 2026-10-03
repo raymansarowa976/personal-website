@@ -33,14 +33,14 @@ vi.mock('next/link', () => ({
 
 describe('Blog listing page', () => {
   describe('structure', () => {
-    it('renders a main landmark', () => {
+    it('does not render its own main landmark (the root layout provides it)', () => {
       render(<BlogPage />)
-      expect(screen.getByRole('main')).toBeTruthy()
+      expect(screen.queryByRole('main')).toBeNull()
     })
 
     it('renders the page heading', () => {
       render(<BlogPage />)
-      expect(screen.getByRole('heading', { level: 1 })).toBeTruthy()
+      expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Blog')
     })
   })
 
@@ -64,16 +64,28 @@ describe('Blog listing page', () => {
       expect(screen.getByRole('link', { name: 'Second Post' })).toBeTruthy()
     })
 
-    it('shows the date of each post', () => {
+    it('renders each post title as an h2', () => {
       render(<BlogPage />)
-      expect(screen.getByText('2024-01-15')).toBeTruthy()
-      expect(screen.getByText('2024-02-20')).toBeTruthy()
+      const headings = screen.getAllByRole('heading', { level: 2 })
+      expect(headings.map((h) => h.textContent)).toEqual(['Second Post', 'Hello World'])
     })
 
-    it('renders the date in a time element', () => {
+    it('shows the summary of each post', () => {
       render(<BlogPage />)
-      const times = document.querySelectorAll('time')
-      expect(times).toHaveLength(2)
+      expect(screen.getByText('My first post summary.')).toBeTruthy()
+      expect(screen.getByText('Another post summary.')).toBeTruthy()
+    })
+
+    it('shows the formatted date of each post', () => {
+      render(<BlogPage />)
+      expect(screen.getByText('January 15, 2024')).toBeTruthy()
+      expect(screen.getByText('February 20, 2024')).toBeTruthy()
+    })
+
+    it('renders the date in a time element with a machine-readable dateTime', () => {
+      render(<BlogPage />)
+      const times = Array.from(document.querySelectorAll('time'))
+      expect(times.map((t) => t.getAttribute('datetime'))).toEqual(['2024-02-20', '2024-01-15'])
     })
   })
 })
