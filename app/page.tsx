@@ -49,7 +49,7 @@ export default function Home() {
               both in school and on my own time. Apart from programming, I also enjoy reading novels and manga, and playing horror games.
             </p>
           </div>
-          <div className="flex items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               href="/blog"
               className="px-6 py-2.5 rounded-full bg-white text-slate-900 font-semibold hover:bg-slate-100 transition-colors text-sm"
@@ -61,6 +61,12 @@ export default function Home() {
               className="px-6 py-2.5 rounded-full border border-white/40 text-white font-semibold hover:border-white/70 hover:bg-white/10 transition-colors text-sm"
             >
               Projects
+            </Link>
+            <Link
+              href="/bookshelf"
+              className="px-6 py-2.5 rounded-full border border-white/40 text-white font-semibold hover:border-white/70 hover:bg-white/10 transition-colors text-sm"
+            >
+              Bookshelf
             </Link>
           </div>
           <SocialLinks className="pt-2" size="lg" />
