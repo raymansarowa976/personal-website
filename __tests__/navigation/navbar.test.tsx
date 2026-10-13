@@ -21,7 +21,7 @@ vi.mock('next/link', () => ({
 }))
 
 /**
- * Tests for AC1: Navbar with links to Home, Blog, and Projects
+ * Tests for AC1: Navbar with a home link (the site name), Blog, Projects, and Bookshelf
  * Tests for AC3: Responsive layout markers
  *
  * Imports from `components/Navbar.tsx` (not yet created) — will fail in red state.
@@ -36,10 +36,15 @@ describe('Navbar', () => {
   })
 
   describe('required links', () => {
-    it('contains a link to the home page (/)', () => {
+    it('links the site name to the home page (/)', () => {
       render(<Navbar />)
-      const link = screen.getByRole('link', { name: /home/i })
+      const link = screen.getByRole('link', { name: /rayman sarowa/i })
       expect(link.getAttribute('href')).toBe('/')
+    })
+
+    it('does not render a separate Home link', () => {
+      render(<Navbar />)
+      expect(screen.queryByRole('link', { name: /^home$/i })).toBeNull()
     })
 
     it('contains a link to the blog (/blog)', () => {
@@ -75,10 +80,11 @@ describe('Navbar', () => {
       expect(screen.getByRole('link', { name: /blog/i }).getAttribute('aria-current')).toBe('page')
     })
 
-    it('does not mark Home active on other pages', () => {
-      vi.mocked(usePathname).mockReturnValue('/blog')
+    it('marks no link active on the home page', () => {
+      vi.mocked(usePathname).mockReturnValue('/')
       render(<Navbar />)
-      expect(screen.getByRole('link', { name: /home/i }).getAttribute('aria-current')).toBeNull()
+      const active = screen.getAllByRole('link').filter((l) => l.getAttribute('aria-current') === 'page')
+      expect(active).toHaveLength(0)
     })
 
     it('marks only one link as active', () => {
