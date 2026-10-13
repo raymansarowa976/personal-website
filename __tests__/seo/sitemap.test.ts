@@ -24,6 +24,11 @@ describe('sitemap', () => {
     expect(urls.some((u) => u.endsWith('/blog'))).toBe(true)
   })
 
+  it('includes the bookshelf page', () => {
+    const urls = sitemap().map((e) => e.url)
+    expect(urls.some((u) => u.endsWith('/bookshelf'))).toBe(true)
+  })
+
   it('includes one entry per post', () => {
     const urls = sitemap().map((e) => e.url)
     expect(urls.some((u) => u.includes('hello-world'))).toBe(true)
