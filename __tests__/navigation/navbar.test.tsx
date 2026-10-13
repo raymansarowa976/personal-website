@@ -53,6 +53,12 @@ describe('Navbar', () => {
       const link = screen.getByRole('link', { name: /projects/i })
       expect(link.getAttribute('href')).toBe('/projects')
     })
+
+    it('contains a link to the bookshelf (/bookshelf)', () => {
+      render(<Navbar />)
+      const link = screen.getByRole('link', { name: /bookshelf/i })
+      expect(link.getAttribute('href')).toBe('/bookshelf')
+    })
   })
 
   describe('active link', () => {

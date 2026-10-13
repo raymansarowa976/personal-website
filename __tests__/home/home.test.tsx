@@ -36,6 +36,13 @@ describe('Home page', () => {
       const projectsLink = links.find((l) => l.getAttribute('href') === '/projects')
       expect(projectsLink).toBeTruthy()
     })
+
+    it('links to the bookshelf at /bookshelf', () => {
+      render(<Home />)
+      const links = screen.getAllByRole('link')
+      const bookshelfLink = links.find((l) => l.getAttribute('href') === '/bookshelf')
+      expect(bookshelfLink).toBeTruthy()
+    })
   })
 
   describe('social links', () => {
